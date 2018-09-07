@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>채팅 프로젝트</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="/css/index.css" type="text/css" />
+</head>
+<body>
+    <div class="chat_main_div">
+      <div class="chat_sub_div">
+         <p class="exit_btn"><a href="/">나가기</a></p>
+        <textarea id="chatLog" class="chat_log" readonly></textarea>
+          <form id="chat">
+            <input id="name" class="name" type="text" readonly>
+            <input id="message" class="message" type="text" required>
+            <input type="submit" class="chat" value="보내기"/>
+          </form>
+          <div id="box" class="box"></div>
+      </div>
+    </div>  
+    <script src="/socket.io/socket.io.js"></script> 
+    <script>
+      var socket = io(); 
+      $('#chat').on('submit', function(e){ 
+        socket.emit('send message', $('#name').val(), $('#message').val());
+        $('#message').val('');
+        $('#message').focus();
+        e.preventDefault();
+      });
+      socket.on('receive message', function(msg){ 
+        $('#chatLog').append(msg+'\n');
+        $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+      });
+      socket.on('change name', function(name){ 
+        $('#name').val(name);
+      });
+    </script>
+</body>
+</html>

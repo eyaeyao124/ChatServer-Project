@@ -1,0 +1,50 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body{background-color: #eee;}
+
+.chat_log{ width:600px; height: 400px; font-size:16px;line-height:25px;border:none;}
+.name{ width:90px; padding:10px 0; color: #2D5DCA; font-weight:bold; font-size:16px; text-align:left; border:none;}
+.message{ width:63%; padding:10px 0; border:none; border-bottom:1px solid #eee;font-size:16px;}
+.chat{ width: 20%; background-color:#2D5DCA;padding:10px 0; border-radius:3px;border:none;font-size:16px; font-weight:500; color:#fff;}
+.chat_main_div{ width: 100%; text-align: center;}
+.chat_sub_div{display: inline-block; background-color: #fff; padding:50px;margin-top:20px;}
+#chat_username{font-weight: bold;text-align: center;font-size:30px; font-weight: bold; margin:30px;}
+#chat_username_color{color:#2D5DCA;}
+#chat_main_color{color: #666;}
+
+.maindiv{ width: 100%; text-align: center;}
+.maindiv h1{font-size:50px; font-weight: bold; margin:60px;color:#2D5DCA;}
+.subdiv{display: inline-block;}
+.formdiv{background-color: #fff; padding:100px;}
+.login_text{color:#666; font-weight:bold; text-align: left;display: block;}
+.login_input{padding:10px 150px; text-align:center;border:1px solid #eee;margin:5px 0  30px 0;}
+.login_btn{background-color:#2D5DCA;padding:10px 203px; border-radius:3px;border:none;font-size:16px; font-weight:500; color:#fff;}
+
+.subdiv h2{font-size:30px; font-weight: bold; margin:60px;color:#666;}
+.backbtn{padding:10px;}
+.backbtn a{text-decoration: none;font-size:16px; color:#aaa;}
+
+.joinbtn{background-color:#eee;padding:10px 203px; border-radius:3px;border:none;font-size:16px; font-weight:500; color:#fff;margin-top:20px;}
+.joinbtn a{text-decoration: none;font-size:16px; color:#2D5DCA; font-weight:bold;}
+
+.create_info{color:#999; font-size:12px;margin-top: -25px;text-align: left;margin-bottom:30px;}
+.exit_btn{text-align: right; margin-top:-30px; margin-right:-20px;}
+.exit_btn a{text-decoration: none;font-size:16px; color:#999; font-weight:bold;}
