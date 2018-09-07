@@ -28,6 +28,11 @@
         $('#message').focus();
         e.preventDefault();
       });
+      
+      /*socket.on('enter the user',function(name){
+         $('#chatLog').val(name+'님이 채팅에 참여하셨습니다'+'\n');
+      });*/
+      
       socket.on('receive message', function(msg){ 
         $('#chatLog').append(msg+'\n');
         $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);

@@ -56,7 +56,7 @@ app.post('/login_process',function(req, res){
                      location.replace('/');
                     </script>`); 
            }else if(result[0].pwd !==  postPwd){
-               return res.send(`<script>alert('비밀번호/아이디가 틀렸습니다')</script><script>
+               return res.send(`<script>alert('비밀번호가 틀렸습니다')</script><script>
                      location.replace('/');
                     </script>`); 
                
@@ -105,8 +105,11 @@ app.post('/create_process',function(req, res){
             if(err){
                 throw err;
             }
-             res.writeHead(302, {Location: `/`});
-             res.end();  
+             return res.send(`<script>alert('정상적으로 등록을 완료했습니다')</script><script>
+                     location.replace('/');
+                    </script>`);
+             //res.writeHead(302, {Location: `/`});
+             //res.end();  
            }
         );
 
@@ -132,15 +135,18 @@ app.get('/chat',function(req, res){
 });
 
 io.on('connection', function(socket){
-    
     //console.log(socket);
-    console.log('user connected: ', socket.id); 
+    console.log('user connected: ', socket.id);
     var name = postUsername;                  
     io.to(socket.id).emit('change name', name);   
     
     socket.on('disconnect', function(){ 
      console.log('user disconnected: ', socket.id);
     });
+    
+    /*socket.on('enter the user',function(name){
+       io.emit('receive message', name);
+    });*/
     
     socket.on('send message', function(name,text){ 
       var msg = name + ' : ' + text;
